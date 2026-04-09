@@ -19,7 +19,7 @@ export default function Header() {
       />  
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col h-full px-8">
+      <div className="relative z-10 flex flex-col h-full">
         {/* Logo */}
         <div className="static items-center justify-between pt-5 pb-4">
           <Image src="/assets/logo.png" alt="Les Petits Plats" height={25} width={207} />
