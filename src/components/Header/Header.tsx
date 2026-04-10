@@ -4,8 +4,10 @@ import Image from "next/image";
 import "./Header.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useFilters } from "@/src/context/FilterContext";
 
 export default function Header() {
+  const { searchQuery, setSearchQuery } = useFilters();
   return (
     <header className="relative w-full overflow-hidden" style={{ height: "667px", padding: "50px", paddingLeft: "70px", paddingRight: "70px" }}>
       {/* Background image overlay */}
@@ -60,6 +62,8 @@ export default function Header() {
           <div className="relative w-full" style={{paddingLeft: "173px", paddingRight: "173px"}}>
             <input
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Rechercher une recette, un ingrédient..."
               className="w-full rounded-[11px] text-sm outline-none"
               style={{

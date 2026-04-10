@@ -1,6 +1,11 @@
-import recipes  from "@/src/data/recipes.json";
+import { Recipe } from "@/src/types/Recipe";
 import RecipeCard from "@/src/components/RecipeCard/RecipeCard";
-export default function RecipeGrid() {
+
+interface RecipeGridProps {
+  recipes: Recipe[];
+}
+
+export default function RecipeGrid({ recipes }: RecipeGridProps) {
   return (
     <section
       className="px-8 py-8"
@@ -9,7 +14,7 @@ export default function RecipeGrid() {
       <div
         className="grid gap-6"
         style={{
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+          gridTemplateColumns: "repeat(3, 1fr)",
         }}
       >
         {recipes.map((recipe) => (
