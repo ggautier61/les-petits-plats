@@ -13,9 +13,9 @@ function HomeContent() {
   const filteredRecipes = filterRecipes(recipes, filters);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="flex flex-col align-center min-h-screen bg-white">
       <Header />
-      <div style={{ maxWidth: "1236px", margin: "0 auto" }}>
+      <div style={{ margin: "0 auto" }}>
         <Filters 
           ingredients={ingredients as string[]} 
           appareils={appliances as string[]} 
@@ -23,7 +23,7 @@ function HomeContent() {
           count={filteredRecipes.length}
         />
       </div>
-      <div style={{ maxWidth: "1236px", margin: "0 auto 60px" }}>
+      <div>
         <RecipeGrid recipes={filteredRecipes} />
       </div>
       <Footer />

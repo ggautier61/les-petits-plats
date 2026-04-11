@@ -8,13 +8,13 @@ interface RecipeGridProps {
 export default function RecipeGrid({ recipes }: RecipeGridProps) {
   return (
     <section
-      
+      className="flex justify-center"
       style={{ minHeight: "60vh" }}
     >
       <div
-        className="grid gap-[48px] justify-center"
+        className="grid gap-[48px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center"
         style={{
-          gridTemplateColumns: "repeat(3, 1fr)",
+        //   gridTemplateColumns: "repeat(3, 1fr)",
         }}
       >
         {recipes.map((recipe) => (

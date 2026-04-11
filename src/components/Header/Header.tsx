@@ -3,7 +3,7 @@
 import Image from "next/image";
 import "./Header.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useFilters } from "@/src/context/FilterContext";
 
 export default function Header() {
@@ -77,7 +77,28 @@ export default function Header() {
               }}
             />
 
-           
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                style={{
+                  position: "absolute",
+                  right: "248px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  background: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <FontAwesomeIcon icon={faXmark} style={{ color: "#aaa", height: "20px" }} />
+              </button>
+            )}
+
+            
             <button
               className="absolute right-[183px] rounded-[10px] flex items-center justify-center transition-opacity hover:opacity-80"
               style={{ background: "black", height: "52px", width: "51px", top:"10px", bottom: "10px" }}

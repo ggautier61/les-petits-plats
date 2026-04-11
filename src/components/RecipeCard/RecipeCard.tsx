@@ -13,13 +13,15 @@ export default function RecipeCard({ recipe }: { recipe: RecipeType }) {
       }}
     >
       {/* Image */}
-      <div className="relative w-full overflow-hidden" style={{ height: "200px" }}>
+      <div className="relative w-full overflow-hidden" style={{ height: "250px" }}>
         <Image
           src={'/assets/' + recipe.image}
           alt={recipe.name}
-          fill
-          className="object-cover transition-transform duration-500 hover:scale-105"
-          sizes="(max-width: 768px) 100vw, 33vw"
+          width={380}
+          height={250}
+          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          style={{maxHeight: "250px"}}
+          
         />
           <span
             className="absolute top-[22px] right-[22px] text-xs font-semibold px-4 py-1 rounded-full"

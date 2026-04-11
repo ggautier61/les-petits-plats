@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer
-      className="flex justify-center items-center"
+      className="flex justify-center items-center w-full"
       style={{ background: "var(--color-dark)", height: "138px" }}
     >
       <p

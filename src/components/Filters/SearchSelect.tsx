@@ -29,6 +29,10 @@ export default function SearchSelect({
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  useEffect(() => {
+    setSelected(value);
+  }, [value]);
+
   // Fermer si clic extérieur
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -154,9 +158,9 @@ export default function SearchSelect({
                     key={option}
                     role="option"
                     aria-selected={isSelected}
-                    onClick={() => handleSelect(option)}
+                    onClick={() => !isSelected ? handleSelect(option) : null}
                     className={`
-                      px-4 py-2 text-sm cursor-pointer
+                      px-4 py-2 text-sm flex items-center justify-between ${isSelected ? 'cursor-default' : 'cursor-pointer'}
                       transition-colors duration-100
                       ${
                         isSelected
@@ -165,7 +169,16 @@ export default function SearchSelect({
                       }
                     `}
                   >
-                    {option}
+                    <span>{option}</span>
+                    {isSelected && (
+                      <button
+                        onClick={() => handleSelect(option)}
+                        className="flex items-center justify-center text-gray-500 hover:text-gray-700 cursor-pointer ml-2"
+                        aria-label="Désélectionner"
+                      >
+                        <X size={14} />
+                      </button>
+                    )}
                   </li>
                 );
               })
