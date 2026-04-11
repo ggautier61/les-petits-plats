@@ -224,7 +224,7 @@
             {
                 "ingredient": "Sucre vanillé",
                 "quantity": 1,
-                "unit": "sachets"
+                "unit": "sachet"
 
             }
         ],
@@ -1495,7 +1495,7 @@
             {
                 "ingredient": "Sucre vanillé",
                 "quantity": 1,
-                "unit": "sachets"
+                "unit": "sachet"
             }
         ],
         "time": 20,
@@ -1659,7 +1659,7 @@
             {
                 "ingredient": "Sucre vanillé",
                 "quantity": 1,
-                "unit": "sachets"
+                "unit": "sachet"
             },
             {
                 "ingredient": "Oeuf",
