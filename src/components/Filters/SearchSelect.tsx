@@ -76,7 +76,7 @@ export default function SearchSelect({
   };
 
   return (
-    <div ref={containerRef} className="relative w-56 font-sans select-none">
+    <div ref={containerRef} className="relative w-[195px] font-sans select-none">
       {/* ── Trigger ── */}
       <button
         onClick={handleToggle}
@@ -84,7 +84,7 @@ export default function SearchSelect({
         aria-expanded={isOpen}
         className={`
           flex w-full items-center justify-between
-          rounded-xl bg-white px-4 py-3
+          rounded-[11px] bg-white px-4 py-3
           text-sm font-medium text-gray-800
           shadow-sm border border-gray-100
           transition-all duration-150

@@ -4,10 +4,12 @@ import Image from "next/image";
 export default function RecipeCard({ recipe }: { recipe: RecipeType }) {
   return (
     <article
-      className="rounded-2xl overflow-hidden bg-white flex flex-col transition-all duration-300 hover:-translate-y-1"
+      className=" overflow-hidden bg-white flex flex-col transition-all duration-300 hover:-translate-y-1"
       style={{
         boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
+        width: "380px",
         border: "1px solid var(--color-border)",
+        borderRadius: "21px",
       }}
     >
       {/* Image */}

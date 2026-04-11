@@ -13,7 +13,7 @@ export default function Filters({ ingredients, appareils, ustensiles, count }: {
   } = useFilters();
 
   return (
-    <section className="px-8 py-[60px] flex items-center justify-between border-b" style={{ borderColor: "var(--color-border)", gap: "65px" }}>
+    <section className="px-[10px] py-[60px] flex items-center justify-between" style={{ gap: "65px" }}>
       <div className="flex items-center gap-[65px]">
         <SearchSelect
           label="Ingrédients"
@@ -34,7 +34,7 @@ export default function Filters({ ingredients, appareils, ustensiles, count }: {
           onChange={(val) => setSelectedUstensile(val)}
         />
       </div>
-      <span>{count} recette{count !== 1 ? 's' : ''}</span>
+      <span style={{fontFamily: "var(--font-display)", fontSize: "21px"}}>{count} recette{count !== 1 ? 's' : ''}</span>
     </section>
   );
 }

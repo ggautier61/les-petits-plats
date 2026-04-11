@@ -8,11 +8,11 @@ interface RecipeGridProps {
 export default function RecipeGrid({ recipes }: RecipeGridProps) {
   return (
     <section
-      className="px-8 py-8"
-      style={{ background: "var(--color-light-bg)", minHeight: "60vh" }}
+      
+      style={{ minHeight: "60vh" }}
     >
       <div
-        className="grid gap-6"
+        className="grid gap-[48px] justify-center"
         style={{
           gridTemplateColumns: "repeat(3, 1fr)",
         }}
