@@ -23,7 +23,7 @@ function HomeContent() {
           count={filteredRecipes.length}
         />
       </div>
-      <div style={{ maxWidth: "1236px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "1236px", margin: "0 auto 60px" }}>
         <RecipeGrid recipes={filteredRecipes} />
       </div>
       <Footer />
