@@ -9,14 +9,22 @@ export default function NotFound() {
         className="relative w-full overflow-hidden flex flex-col"
         style={{ padding: "50px 70px", flex: 1, minHeight: "calc(100vh - 138px)" }}
       >
-        <div
+        {/* <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('./assets/header.jpg')",
+            backgroundImage: "url('/assets/header.jpg')",
             filter: "brightness(0.35)",
           }}
-        />
+        /> */}
         
+        <div
+          className="absolute inset-0 bg-cover"
+          style={{
+            backgroundImage: "url('/assets/header.jpg')",
+            backgroundPosition: "center",
+            filter: "brightness(0.35)"
+          }}
+        />
         <div className="relative z-10">
           <Image src="/assets/logo.png" alt="Les Petits Plats" height={25} width={207} />
         </div>
