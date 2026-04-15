@@ -6,11 +6,35 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useFilters } from "@/src/context/FilterContext";
 
-export default function Header() {
+interface HeaderProps {
+  variant?: "hero" | "simple";
+}
+
+export default function Header({ variant = "hero" }: HeaderProps) {
   const { searchQuery, setSearchQuery } = useFilters();
+
+  if (variant === "simple") {
+    return (
+      <header
+        className="relative w-full overflow-hidden"
+        style={{ height: "128px", padding: "50px", paddingLeft: "70px", paddingRight: "70px" }}
+      >
+        <div
+          className="absolute inset-0 bg-cover"
+          style={{
+            backgroundImage: "url('/assets/header.jpg')",
+            backgroundPosition: "center",
+          }}
+        />
+        <div className="relative z-10 h-full flex items-center">
+          <Image src="/assets/logo.png" alt="Les Petits Plats" height={25} width={207} />
+        </div>
+      </header>
+    );
+  }
+
   return (
     <header className="relative w-full overflow-hidden" style={{ height: "667px", padding: "50px", paddingLeft: "70px", paddingRight: "70px" }}>
-      {/* Background image overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -20,26 +44,11 @@ export default function Header() {
         }}
       />  
 
-      {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
-        {/* Logo */}
         <div className="static items-center justify-between pt-5 pb-4">
           <Image src="/assets/logo.png" alt="Les Petits Plats" height={25} width={207} />
-          {/* <div className="flex items-center gap-2">
-            <span
-              className="font-bold tracking-widest uppercase text-white text-sm"
-              style={{ fontFamily: "var(--font-body)", letterSpacing: "0.15em" }}
-            >
-              LES PETITS PLATS
-              <div className="circle">
-                <div className="inner-circle"></div>
-              </div>
-            </span>
-          </div> */}
-          
         </div>
 
-        {/* Hero text */}
         <div className="flex-1 flex flex-col items-center justify-center text-center -mt-4">
           <h1
             className="text-white uppercase leading-tight mb-7"
@@ -58,7 +67,6 @@ export default function Header() {
             </span>
           </h1>
 
-          {/* Search bar */}
           <div className="relative w-full" style={{paddingLeft: "173px", paddingRight: "173px"}}>
             <input
               type="text"
@@ -105,17 +113,7 @@ export default function Header() {
 
             >
               <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "rgb(255, 255, 255)", height: "28px"}} />
-              {/* <i className="fa-solid fa-magnifying-glass"></i> */}
             </button>
-              {/* <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-                <circle cx="11" cy="11" r="7" stroke="white" strokeWidth="2.2" />
-                <path
-                  d="M16.5 16.5L21 21"
-                  stroke="#1a1a1a"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                />
-              </svg> */}
           </div>
         </div>
       </div>

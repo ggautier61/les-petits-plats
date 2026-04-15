@@ -15,7 +15,7 @@ function HomeContent() {
   return (
     <main className="flex flex-col align-center min-h-screen bg-white">
       <Header />
-      <div style={{ margin: "0 auto" }}>
+      <div className="flex justify-center" style={{ margin: "0" }}>
         <Filters 
           ingredients={ingredients as string[]} 
           appareils={appliances as string[]} 

@@ -8,7 +8,7 @@ interface RecipeGridProps {
 export default function RecipeGrid({ recipes }: RecipeGridProps) {
   return (
     <section
-      className="flex justify-center"
+      className="flex justify-center pb-15"
       style={{ minHeight: "60vh" }}
     >
       <div

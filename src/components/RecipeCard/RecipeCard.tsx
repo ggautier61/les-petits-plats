@@ -1,26 +1,28 @@
 import { Recipe as RecipeType } from "@/src/types/Recipe";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function RecipeCard({ recipe }: { recipe: RecipeType }) {
   return (
-    <article
-      className=" overflow-hidden bg-white flex flex-col transition-all duration-300 hover:-translate-y-1"
-      style={{
-        boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
-        width: "380px",
-        border: "1px solid var(--color-border)",
-        borderRadius: "21px",
-      }}
-    >
+    <Link href={`/recipe/${recipe.slug}`} style={{ textDecoration: "none", display: "block" }}>
+      <article
+        className="h-full overflow-hidden bg-white flex flex-col transition-all duration-300 hover:-translate-y-1"
+        style={{
+          boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
+          width: "380px",
+          border: "1px solid var(--color-border)",
+          borderRadius: "21px",
+        }}
+      >
       {/* Image */}
-      <div className="relative w-full overflow-hidden" style={{ height: "250px" }}>
+      <div className="d-flex relative w-full overflow-hidden" style={{ height: "250px" }}>
         <Image
           src={'/assets/' + recipe.image}
           alt={recipe.name}
           width={380}
           height={250}
-          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-          style={{maxHeight: "250px"}}
+          className="object-cover transition-transform duration-500 hover:scale-105"
+          style={{height: '100%',maxHeight: "260px"}}
           
         />
           <span
@@ -88,5 +90,6 @@ export default function RecipeCard({ recipe }: { recipe: RecipeType }) {
         
       </div>
     </article>
+    </Link>
   );
 }
