@@ -56,7 +56,7 @@ export function filterRecipes(recipes: Recipe[], filters: {
   return recipes.filter((recipe) => {
     const searchLower = filters.searchQuery.toLowerCase();
     
-    const matchesSearch = filters.searchQuery === '' || 
+    const matchesSearch = filters.searchQuery.length < 3 || 
       recipe.name.toLowerCase().includes(searchLower) ||
       recipe.description.toLowerCase().includes(searchLower) ||
       recipe.ingredients.some(ing => ing.ingredient.toLowerCase().includes(searchLower));
